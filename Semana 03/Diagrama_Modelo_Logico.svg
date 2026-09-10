@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .title { font: 700 28px Arial, sans-serif; fill: #1f2937; }
+    .box { fill: #ffffff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+    .head { fill: #1d4ed8; rx: 10; }
+    .entity { font: 700 18px Arial, sans-serif; fill: white; }
+    .field { font: 15px Arial, sans-serif; fill: #1f2937; }
+    .key { font: 700 15px Arial, sans-serif; fill: #7c3aed; }
+    .rel { stroke: #475569; stroke-width: 2; fill: none; }
+    .card { font: 700 16px Arial, sans-serif; fill: #475569; }
+    .note { font: 14px Arial, sans-serif; fill: #64748b; }
+  </style>
+  <rect width="1400" height="900" fill="#f8fafc"/>
+  <text x="60" y="55" class="title">Academia - Modelo Logico Estruturado (3FN)</text>
+  <text x="60" y="82" class="note">PK = chave primaria | FK = chave estrangeira | cardinalidade: 1 para N</text>
+
+  <path class="rel" d="M340 265 H440"/><text class="card" x="350" y="255">1</text><text class="card" x="420" y="255">N</text>
+  <path class="rel" d="M665 265 H760"/><text class="card" x="675" y="255">N</text><text class="card" x="740" y="255">1</text>
+  <path class="rel" d="M220 430 V600 H370"/><text class="card" x="230" y="595">1</text><text class="card" x="350" y="590">N</text>
+  <path class="rel" d="M700 430 V600 H570"/><text class="card" x="690" y="595">1</text><text class="card" x="580" y="590">N</text>
+  <path class="rel" d="M1030 430 V600 H1050"/><text class="card" x="1010" y="590">1</text><text class="card" x="1040" y="590">N</text>
+  <path class="rel" d="M570 730 H910"/><text class="card" x="580" y="720">N</text><text class="card" x="890" y="720">1</text>
+
+  <g transform="translate(70,130)"><rect class="box" width="270" height="300"/><rect class="head" width="270" height="45"/><text class="entity" x="95" y="29">ALUNO</text>
+    <text class="key" x="18" y="75">PK  id_aluno</text><text class="field" x="18" y="103">nome</text><text class="field" x="18" y="131">cpf (UNIQUE)</text><text class="field" x="18" y="159">data_nascimento</text><text class="field" x="18" y="187">telefone</text><text class="field" x="18" y="215">email (UNIQUE)</text><text class="field" x="18" y="243">data_cadastro</text></g>
+  <g transform="translate(440,130)"><rect class="box" width="225" height="255"/><rect class="head" width="225" height="45"/><text class="entity" x="54" y="29">ASSINATURA</text>
+    <text class="key" x="18" y="75">PK  id_assinatura</text><text class="key" x="18" y="103">FK  id_aluno</text><text class="key" x="18" y="131">FK  id_plano</text><text class="field" x="18" y="159">data_inicio</text><text class="field" x="18" y="187">data_fim</text><text class="field" x="18" y="215">status</text><text class="field" x="18" y="243">forma_pagamento</text></g>
+  <g transform="translate(760,130)"><rect class="box" width="250" height="150"/><rect class="head" width="250" height="45"/><text class="entity" x="88" y="29">PLANO</text>
+    <text class="key" x="18" y="75">PK  id_plano</text><text class="field" x="18" y="103">nome (UNIQUE)</text></g>
+  <g transform="translate(370,600)"><rect class="box" width="200" height="130"/><rect class="head" width="200" height="45"/><text class="entity" x="47" y="29">PARTICIPA</text>
+    <text class="key" x="18" y="75">PK, FK  id_aluno</text><text class="key" x="18" y="103">PK, FK  id_aula</text></g>
+  <g transform="translate(910,600)"><rect class="box" width="245" height="145"/><rect class="head" width="245" height="45"/><text class="entity" x="94" y="29">AULA</text>
+    <text class="key" x="18" y="75">PK  id_aula</text><text class="key" x="18" y="103">FK  id_instrutor</text></g>
+  <g transform="translate(1060,130)"><rect class="box" width="275" height="300"/><rect class="head" width="275" height="45"/><text class="entity" x="82" y="29">INSTRUTOR</text>
+    <text class="key" x="18" y="75">PK  id_instrutor</text><text class="field" x="18" y="103">nome</text><text class="field" x="18" y="131">cpf (UNIQUE)</text><text class="field" x="18" y="159">especialidade</text><text class="field" x="18" y="187">telefone</text><text class="field" x="18" y="215">email (UNIQUE)</text><text class="field" x="18" y="243">data_contratacao</text></g>
+</svg>
